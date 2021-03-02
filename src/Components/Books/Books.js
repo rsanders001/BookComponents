@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import './Posts.scss';
-import Post from "../Post/Post";
+import './Books.scss';
+import Book from "../Book/Book";
 import axios from "axios";
 
-export class Posts extends Component {
-    postsEndpoint = 'http://mysite.com/wp-json/wp/v2/posts';
+export class Books extends Component {
+    postsEndpoint = 'https://rsanders9.bitlampsites.com/wpd/FinalProject/wordpress/wp-json/wp/v2/book';
 
     state = {
-        posts: [],
+        books: [],
         isLoaded: false,
     }
 
@@ -18,7 +18,7 @@ export class Posts extends Component {
             .then((res) => {
                 console.log('Response', res);
                 this.setState({
-                    posts: res.data,
+                    books: res.data,
                     isLoaded: true,
                 });
             })
@@ -30,10 +30,10 @@ export class Posts extends Component {
 
     render() {
         return (
-            <div className="posts">
+            <div className="books">
                 {this.state.isLoaded ? '' : <p>Loading</p>}
-                {this.state.posts.map((post) =>
-                    <Post title={post.title.rendered} body={post.content.rendered} key={post.id}/>
+                {this.state.books.map((book) =>
+                    <Book title={book.title.rendered} body={book.content.rendered}  key={book.id}/>
                 )}
             </div>
         )

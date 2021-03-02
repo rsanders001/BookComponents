@@ -1,0 +1,35 @@
+.Book {
+  margin-bottom: 125px;
+  color: white;
+  background-color: #007a87;
+  padding: 25px;
+}
+
+h3{
+
+}
+
+#title{
+  font-weight: bold;
+  font-size: 2em;
+}
+
+a {
+  background-color: #0c0c0c;
+  color: white;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+}
+
+a:active {
+  box-shadow: none;
+  top: 5px;
+}
+

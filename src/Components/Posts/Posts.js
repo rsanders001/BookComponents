@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Posts.scss';
 import Post from "../Post/Post";
 import axios from "axios";
+import { Button } from '@material-ui/core';
 
 export class Posts extends Component {
     postsEndpoint = 'http://mysite.com/wp-json/wp/v2/posts';
@@ -31,6 +32,8 @@ export class Posts extends Component {
     render() {
         return (
             <div className="posts">
+                <Button color="primary">Hello World</Button>
+
                 {this.state.isLoaded ? '' : <p>Loading</p>}
                 {this.state.posts.map((post) =>
                     <Post title={post.title.rendered} body={post.content.rendered} key={post.id}/>
